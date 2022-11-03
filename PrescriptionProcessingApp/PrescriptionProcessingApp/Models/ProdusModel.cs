@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PrescriptionProcessingApp.Models.DBObjects
+namespace PrescriptionProcessingApp.Models
 {
-    public partial class Produ
+    public class ProdusModel
     {
         public Guid IdProdus { get; set; }
         public Guid IdTipProdus { get; set; }
@@ -11,8 +10,9 @@ namespace PrescriptionProcessingApp.Models.DBObjects
         public string? SubstantaActiva { get; set; }
         public decimal PretUnitar { get; set; }
         public int Stoc { get; set; }
-        public DateTime Bbd { get; set; }
 
-        public virtual TipProdu IdTipProdusNavigation { get; set; } = null!;
+        [DisplayFormat(DataFormatString = "0:MM/dd/yyyy")]
+        [DataType(DataType.Date)]
+        public DateTime Bbd { get; set; }
     }
 }

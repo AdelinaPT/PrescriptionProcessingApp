@@ -7,7 +7,7 @@ namespace PrescriptionProcessingApp.Models.DBObjects
     {
         public User()
         {
-            Reteta = new HashSet<Retetum>();
+            Reteta = new HashSet<Reteta>();
         }
 
         public Guid IdUser { get; set; }
@@ -15,6 +15,6 @@ namespace PrescriptionProcessingApp.Models.DBObjects
         public string UserName { get; set; } = null!;
 
         public virtual UserType IdUserTypeNavigation { get; set; } = null!;
-        public virtual ICollection<Retetum> Reteta { get; set; }
+        public virtual ICollection<Reteta> Reteta { get; set; }
     }
 }

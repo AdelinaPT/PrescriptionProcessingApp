@@ -23,9 +23,9 @@ namespace PrescriptionProcessingApp.Data
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; } = null!;
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; } = null!;
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; } = null!;
-        public virtual DbSet<Produ> Produs { get; set; } = null!;
-        public virtual DbSet<Retetum> Reteta { get; set; } = null!;
-        public virtual DbSet<TipProdu> TipProdus { get; set; } = null!;
+        public virtual DbSet<Produs> Produs { get; set; } = null!;
+        public virtual DbSet<Reteta> Reteta { get; set; } = null!;
+        public virtual DbSet<TipProdus> TipProdus { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserType> UserTypes { get; set; } = null!;
 
@@ -128,7 +128,7 @@ namespace PrescriptionProcessingApp.Data
                     .HasForeignKey(d => d.UserId);
             });
 
-            modelBuilder.Entity<Produ>(entity =>
+            modelBuilder.Entity<Produs>(entity =>
             {
                 entity.HasKey(e => e.IdProdus)
                     .HasName("PK__tmp_ms_x__70473ABA06A70986");
@@ -158,7 +158,7 @@ namespace PrescriptionProcessingApp.Data
                     .HasConstraintName("FK_Produs_ToTipProdus");
             });
 
-            modelBuilder.Entity<Retetum>(entity =>
+            modelBuilder.Entity<Reteta>(entity =>
             {
                 entity.HasKey(e => e.IdReteta)
                     .HasName("PK__Reteta__ADC15DBBB144E909");
@@ -183,7 +183,7 @@ namespace PrescriptionProcessingApp.Data
                     .HasConstraintName("FK_Reteta_ToUser");
             });
 
-            modelBuilder.Entity<TipProdu>(entity =>
+            modelBuilder.Entity<TipProdus>(entity =>
             {
                 entity.HasKey(e => e.IdTipProdus)
                     .HasName("PK__TipProdu__56A856E4E572E527");
